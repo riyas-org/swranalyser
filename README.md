@@ -7,3 +7,22 @@ The core circuitry for the analyser is very simple and is based on the design fr
 
 Pictures at : http://blog.riyas.org/2015/04/a-simple-standalone-antenna-analyzer-with-ili9341tft.html
 
+==================
+libraries
+==================
+
+For driving lcd see : http://blog.riyas.org/2015/03/quickly-test-ili9341-with-arduino.html
+
+For testing AD9850 see : http://blog.riyas.org/2014/02/quickly-test-ad9850-ebay-module-with-arduino-and-software-defined-radio.html
+
+=================
+VSWR -logic
+=================
+
+VSWR = (FWD+REV)/(FWD-REV);
+
+where FWD and REV are the voltages read from the bridge (A0 and A1)
+
+
+
+
