@@ -23,6 +23,8 @@ VSWR = (FWD+REV)/(FWD-REV);
 
 where FWD and REV are the voltages read from the bridge (A0 and A1)
 
+See : https://github.com/devzendo/antenna-analyser/blob/master/DDS_sweeper/DDS_sweeper.ino
+
 
 
 
