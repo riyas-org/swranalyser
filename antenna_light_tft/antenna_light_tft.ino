@@ -3,6 +3,7 @@
 *  Credits various antenna analyser projects
 *  Credits to k6bez antenna analyzer
 *  Credits to  IW2NDH (atom1945.host-ed.me) and zl2pd.com
+*  An IR remote is used and can be modified to use a rotay encoder and a few push buttons
 *  Use Freely for non commercial use, No warranties!
 */
 
@@ -86,7 +87,7 @@ double analogReadX(const int pin)
   if (pin==A0)
   return analogRead(pin);
   else
-  return analogRead(pin)-17;
+  return analogRead(pin); //For offset corrections 
 
 }
 void Docalcswr(){
@@ -244,7 +245,7 @@ void setup(void)
     delay(200);
     AD9850.powerDown(); //set signal output to LOW
     AD9850.set_frequency(0,0,settings.freqCenter);
-    //randomSeed(analogRead(0));
+    //randomSeed(analogRead(0)); // for testing purpose
     irrecv.enableIRIn();
     LastCode = 0;
     pinMode(10, OUTPUT);
@@ -341,7 +342,7 @@ float updateFreq(double r, float v)
     {
         // do nothing
     }
-    else if ((r == 16748655) && (v + spanValue[settings.spanIdx]/2 < 54000000.0))
+    else if ((r == 16748655) && (v + spanValue[settings.spanIdx]/2 < 54000000.0)) // r depends on IR key so change accordingly
     {
         v = v + step;
     }
@@ -376,7 +377,7 @@ void infrared()
         Serial.println(results.value);
         switch(results.value)
         {
-            case 16728765:
+            case 16728765:     // these strange nubers are the codes from ir remote, adjust to suit the keys
             singleclick();
             break;
             case 16730805:
