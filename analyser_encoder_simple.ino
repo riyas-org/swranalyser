@@ -1,3 +1,11 @@
+/*
+A simple vswr analyser using atmega328, a resistive bridge and a diode detector 
+Compared to my previous one, this is modified to support a rotory encoder
+Usage: Single click on the encoder: Move across menu
+Double click will select
+Rotation is used to change the values
+More: http://blog.riyas.org
+*/
 #include <stdint.h>
 #include <TFTv2.h> //https://github.com/riyas-org/ili9341
 #include <SPI.h>
